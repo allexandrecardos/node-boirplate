@@ -1,9 +1,38 @@
+version: '3.8'
 services:
   app:
-    image: node
+    image: node:22-alpine
     working_dir: /app
     volumes:
       - ./:/app
+      - /app/node_modules
     ports:
       - 3000:3000
-    command: npm run start
+    environment:
+      NODE_ENV: development
+    command: npm run dev
+
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_USER: devuser
+      POSTGRES_PASSWORD: devpassword
+      POSTGRES_DB: devdatabase
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  mongo:
+    image: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: devuser
+      MONGO_INITDB_ROOT_PASSWORD: devpassword
+    volumes:
+      - mongodata:/data/db
+    ports:
+      - "27017:27017"
+
+volumes:
+  pgdata:
+  mongodata:

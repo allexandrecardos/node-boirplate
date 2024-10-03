@@ -1,6 +1,6 @@
-import { BaseError } from "./BaseError";
+import { AppError } from "./AppError";
 
-export class NullOfUndefinedError extends BaseError {
+export class NullOfUndefinedError extends AppError {
   constructor() {
     super('Parâmetro inválido: null ou undefined detectado.', 500);
   }

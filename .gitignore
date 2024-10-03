@@ -1,3 +1,15 @@
-node_modules
-dist
-.env.local
+# Ignore node_modules directory
+node_modules/
+
+# Ignore build directory
+dist/
+
+# Ignore all .env files except .env.example
+.env
+.env.*
+
+# Do not ignore .env.example
+!.env.example
+
+# Ignore uploads directory
+uploads/

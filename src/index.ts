@@ -1,12 +1,15 @@
-import dotenv from 'dotenv';
+import { ENVIROMENTS } from './@core/env';
+import { initEnv } from './configs/env';
+import { app } from './configs/express';
+import { orderRoutes } from './routes/orderRoutes';
+import { userRoutes } from './routes/userRoutes';
+import { concat } from './utils';
 
-dotenv.config({
-  path: '.env.local',
-  encoding: 'utf8',
-  debug: true,
-  override: true
-});
+initEnv();
 
-const port = process.env.PORT || 2000;
+app.use('/api', userRoutes)
+app.use('/api', orderRoutes)
 
-console.log(`Server running on port ${port}`);
+app.listen(ENVIROMENTS.port, () => { 
+  console.log(concat(['Server running on ', ENVIROMENTS.urlProject, ':', ENVIROMENTS.port])); 
+})
