@@ -7,9 +7,9 @@ import { concat } from './utils';
 
 initEnv();
 
-app.use('/api', userRoutes)
-app.use('/api', orderRoutes)
+app.use('/api', userRoutes);
+app.use('/api', orderRoutes);
 
-app.listen(ENVIROMENTS.port, () => { 
-  console.log(concat(['Server running on ', ENVIROMENTS.urlProject, ':', ENVIROMENTS.port])); 
-})
+app.listen(ENVIROMENTS.port, () => {
+	console.log(concat(['Server running on ', ENVIROMENTS.urlProject, ':', ENVIROMENTS.port]));
+});

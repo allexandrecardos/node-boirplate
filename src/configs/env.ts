@@ -1,13 +1,12 @@
-import { EnviromentInitializer } from "../@core/env"
+import { EnviromentInitializer } from '../@core/env';
 
 const initEnv = () => {
-  EnviromentInitializer({
-    pathEnv: '.env.local',
-    encoding: 'utf8',
-    debug: true,
-    override: true
-  })
-}
+	EnviromentInitializer({
+		pathEnv: '.env.local',
+		encoding: 'utf8',
+		debug: true,
+		override: true,
+	});
+};
 
-export { initEnv }
-
+export { initEnv };

@@ -1,7 +1,7 @@
-import { AppError } from "./AppError";
+import { AppError } from './AppError';
 
 export class NullOfUndefinedError extends AppError {
-  constructor() {
-    super('Parâmetro inválido: null ou undefined detectado.', 500);
-  }
+	constructor() {
+		super('Parâmetro inválido: null ou undefined detectado.', 500);
+	}
 }
