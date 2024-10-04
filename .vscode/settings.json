@@ -6,13 +6,12 @@
 	"workbench.editor.enablePreview": false,
 	"workbench.startupEditor": "none",
 	"workbench.activityBar.location": "hidden",
-	"editor.fontSize": 13,
-	"editor.lineHeight": 1.6,
+	"editor.fontSize": 12,
+	"editor.lineHeight": 20,
 	"editor.rulers": [80, 120],
 	"editor.codeActionsOnSave": {
 		"source.fixAll.eslint": "explicit"
 	},
-	"editor.fontFamily": "Consolas, 'Courier New', monospace",
 	"editor.minimap.enabled": false,
 	"editor.scrollbar.horizontal": "hidden",
 	"editor.scrollbar.vertical": "hidden",

@@ -1,8 +1,8 @@
+import { userRoutes } from '@routes/userRoutes';
 import { ENVIROMENTS } from './@core/env';
 import { initEnv } from './configs/env';
 import { app } from './configs/express';
 import { orderRoutes } from './routes/orderRoutes';
-import { userRoutes } from './routes/userRoutes';
 import { concat } from './utils';
 
 initEnv();
