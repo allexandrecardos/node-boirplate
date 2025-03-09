@@ -1,12 +1,7 @@
-import { EnviromentInitializer } from '../@core/env';
+import dotenv from 'dotenv';
 
-const initEnv = () => {
-	EnviromentInitializer({
-		pathEnv: '.env.local',
-		encoding: 'utf8',
-		debug: true,
-		override: true,
-	});
-};
-
-export { initEnv };
+dotenv.config({
+  path: '.env',
+  debug: false,
+  override: false,
+});

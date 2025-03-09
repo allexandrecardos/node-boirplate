@@ -5,8 +5,8 @@ const { app, upload } = ExpressClient({
 	morganFormat: 'dev',
 	cors: {
 		origin: '*',
-		methods: ['GET', 'POST'],
-		allowedHeaders: ['Content-Type'],
+		methods: ['GET', 'POST', 'PUT', 'DELETE'],
+		allowedHeaders: ['Content-Type', 'Authorization'],
 		credentials: false,
 	},
 	publicPath: 'public',

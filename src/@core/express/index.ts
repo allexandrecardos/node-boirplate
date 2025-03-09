@@ -1,8 +1,7 @@
-import express, { Request, Response, NextFunction } from 'express';
+import express from 'express';
 import cors from 'cors';
 import multer from 'multer';
 import morgan from 'morgan';
-import { Router } from 'express';
 
 type CorsOptions = {
 	origin: string;
@@ -41,6 +40,7 @@ const ExpressClient = (props: ExpressClientType): ExpressClientReturnType => {
 			methods: props.cors?.methods,
 			allowedHeaders: props.cors?.allowedHeaders,
 			credentials: props.cors?.credentials || false,
+			maxAge: 0
 		}),
 	);
 
@@ -53,18 +53,10 @@ const ExpressClient = (props: ExpressClientType): ExpressClientReturnType => {
 		app.use(express.static(props.publicPath));
 	}
 
-	// Error Handling Middleware
-	app.use((err: any, req: Request, res: Response, next: NextFunction) => {
-		console.error(err.stack);
-		res.status(500).send('Something broke!');
-	});
-
 	return {
 		app,
 		upload,
 	};
 };
 
-const router = Router();
-
-export { ExpressClient, router };
+export { ExpressClient };
